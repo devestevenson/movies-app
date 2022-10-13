@@ -2,16 +2,35 @@ import React from 'react'
 import PeliculaTarjeta from './Pelicula-tarjeta/PeliculaTarjeta'
 import './Peliculas.css'
 
-const Peliculas = () => {
+const peliculasInfo = [
+{
+  id:'1',
+  name:'Black Adam',
+  urlImagen:'https://www.themoviedb.org/t/p/w220_and_h330_face/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg'
+},
+{
+  id:'2',
+  name:'EO',
+  urlImagen:'https://www.themoviedb.org/t/p/w220_and_h330_face/1MK86Vr2nf1GSYOtRd8pFvA5RM8.jpg'
+},
+{
+  id:'3',
+  name:'Survivors Choice',
+  urlImagen:'https://www.themoviedb.org/t/p/w220_and_h330_face/clbZJFNNlfX0Sh9MKRRpH13J8bA.jpg'
+},
+{
+  urlImagen:'/src/imagenes/imagenn.jpg'
+}
+]
+
+const Peliculas = () =>  {
   return (
     <div className='contenedor-peliculas'>
-        <PeliculaTarjeta url='https://www.themoviedb.org/t/p/w220_and_h330_face/lGIkv9fQ3i7yVcJXDvG0Vry00LI.jpg' name='Bestia'/>
-
-        <PeliculaTarjeta url='https://www.themoviedb.org/t/p/w220_and_h330_face/nn7prZXNz3dgCV5jeShqqfHcU9F.jpg' name='Avatar'/>
-
-        <PeliculaTarjeta url='https://www.themoviedb.org/t/p/w220_and_h330_face/zBk0guZ6NI2aHclb4sbrQdrrnOC.jpg' name='Minions'/>
-
-        <PeliculaTarjeta url='https://www.themoviedb.org/t/p/w220_and_h330_face/cvhNj9eoRBe5SxjCbQTkh05UP5K.jpg' name='Rick and Morty'/>
+      {
+        peliculasInfo.map(pelicula=>(
+          <PeliculaTarjeta url={pelicula.urlImagen} name={pelicula.name}/>
+        ))
+      }
     </div>
   )
 }
